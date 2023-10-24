@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Registeration Page</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+    crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div class="alert alert-success">
+    <div class="col">
+      <div>
+        <div class="card-body text-dark">
+          <br>
+          <h1 class="card-title text-dark text-center">Welcome to Registeration Page</h1>
+          <br>
+          <h5 class="form-label">First Name: </h5>
+          <input id="FirstName" type="text" class="form-control">
+          <br>
+          <h5 class="form-label">Last Name:</h5>
+          <input id="LastName" type="text" class="form-control" value="">
+          <br>
+          <h5 class="form-label">Email:</h5>
+          <input id="Email" type="text" class="form-control" value="">
+          <br>
+          <h5 class="form-label">Password:</h5>
+          <input id="Password" type="password" class="form-control" value="">
+          <br>
+          <h5 class="form-label">Gender:</h5>
+          <select id="Gender" class="form-select form-select-sm">
+            <option selected value="-">Select one</option>
+            <option value="M">Male</option>
+            <option value="F">Female</option>
+            <option value="O">Other</option>
+          </select>
+          <br>
+          <h5 class="form-label">Phone Number:</h5>
+          <input id="PhoneNumber" type="number" class="form-control" value="">
+          <br>
+          <h5 class="form-label">Aadhar Card Number: </h5>
+          <input id="AadharCardNumber" type="number" class="form-control">
+          <br>
+          <h5 class="form-label">Vehicle Number: </h5>
+          <input id="VehicleNumber" type="text" class="form-control">
+          <br>
+          <h5 class="form-label">Address: </h5>
+          <input id="Address" type="text" class="form-control">
+          <br>
+          <button id="regBtn" class="btn btn-warning">
+            <h4>Register</h4>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script>
+  let regBtn=document.getElementById("regBtn");
+  regBtn.addEventListener('click',async function(e){
+    e.preventDefault();
+    let FirstName=document.getElementById("FirstName").value;
+    let LastName=document.getElementById("LastName").value;
+    let Email=document.getElementById("Email").value;
+    let Password=document.getElementById("Password").value;
+    let Gender=document.getElementById("Gender").value;
+    let PhoneNumber=parseInt(document.getElementById("PhoneNumber").value);
+    let AadharCardNumber=parseInt(document.getElementById("AadharCardNumber").value);
+    let VehicleNumber=document.getElementById("VehicleNumber").value;
+    let Address=document.getElementById("Address").value;
+    
+    let data_to_be_sent={FirstName,LastName,Email,Password,Gender,PhoneNumber,AadharCardNumber,VehicleNumber,Address};
+    
+    //sending data to backend by axios library
+
+    await axios.post("/register/user",data_to_be_sent);
+  
+  });
+</script>
+</html>

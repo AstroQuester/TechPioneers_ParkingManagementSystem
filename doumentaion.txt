@@ -1,0 +1,2 @@
+user registeration route -> /company/user
+company registeration route -> /company/company
