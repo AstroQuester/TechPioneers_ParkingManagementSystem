@@ -1,6 +1,7 @@
 const express=require("express");
 const mongoose=require("mongoose");
 const app=express();
+const path=require('path');
 // app.listen(3000);
 app.use(express.json());
 
@@ -12,7 +13,7 @@ const database_link="mongodb+srv://TechPioneers:KvSavp7ddFYnl5cm@techpioneerspms
 
 mongoose.connect(database_link).then(
     function(){
-        console.log("DataBase Connected!");
+        console.log("Company DataBase Connected!");
     }
 ).catch(function(err){
     console.log("DataBase Connection Failed!!");
@@ -59,12 +60,12 @@ const CompanyRegisterRouter=express.Router();
 
 app.use("/register/company",CompanyRegisterRouter);
 
-CompanyRegisterRouter.route("/").get(send_companyRegisterPage).post(register_company_in_database);
+CompanyRegisterRouter.route("/").get(send_companyRegisterPage).post(register_company_in_database,);
 
 const companyDataBase=mongoose.model('companyDataBase',companySchema);
 
 function send_companyRegisterPage(req,res){
-    res.sendFile("C:/Users/Kartik/Desktop/TechPioneers_ParkingManagementSystem/Frontend/companyRegister.html");
+    res.sendFile(path.join(__dirname,"../Frontend/companyRegister.html"));
 }
 
 function register_company_in_database(req,res){
@@ -77,13 +78,11 @@ function register_company_in_database(req,res){
         console.log(err);
         console.log("Registeration Failed!");
     });
-
 }
 
 async function createCompany(companyDetails){
-    let resp=await companyDataBase.create(companyDetails);// creating entry in database
-    console.log(resp);
+    let result=await companyDataBase.create(companyDetails);
+    console.log(result);
 }
-
 //this line is so the we can use it in app.js
 module.exports=CompanyRegisterRouter;

@@ -1,5 +1,6 @@
 const express=require("express");
 const mongoose=require("mongoose");
+const path=require("path");
 const app=express();
 // app.listen(3000);
 app.use(express.json());
@@ -12,7 +13,7 @@ const database_link="mongodb+srv://TechPioneers:KvSavp7ddFYnl5cm@techpioneerspms
 
 mongoose.connect(database_link).then(
     function(){
-        console.log("DataBase Connected!");
+        console.log("User DataBase Connected!");
     }
 ).catch(function(err){
     console.log("DataBase Connection Failed!!");
@@ -74,7 +75,8 @@ UserRegisterRouter.route("/").get(send_userRegisterPage).post(register_user_in_d
 const userDataBase=mongoose.model('userDataBase',userSchema);
 
 function send_userRegisterPage(req,res){
-    res.sendFile("C:/Users/Kartik/Desktop/TechPioneers_ParkingManagementSystem/Frontend/userRegister.html");
+    
+    res.sendFile(path.join(__dirname,"../Frontend/userRegister.html"));
 }
 function register_user_in_database(req,res){
     //storing data recieved data from frontend form
