@@ -78,17 +78,19 @@ function send_userRegisterPage(req,res){
     
     res.sendFile(path.join(__dirname,"../Frontend/userRegister.html"));
 }
-function register_user_in_database(req,res){
+async function register_user_in_database(req,res){
     //storing data recieved data from frontend form
     let newUser=req.body;
     // storing in database
-    createUser(newUser).then(()=>{
-        console.log("Registration Successfull!");
-    }).catch((err)=>{
+    try{
+        await createUser(newUser)
+        console.log("Registeration Successfull!");
+        res.status(200).json({message:"Success"});
+    }catch(err){
         console.log(err);
         console.log("Registeration Failed!");
-        
-    });
+        res.status(500).json({message:"Failure"});
+    }
 
 }
 async function createUser(userDetails){

@@ -1,4 +1,5 @@
 const express=require("express");
+const path=require("path");
 const app=express();
 // app.listen(3000);
 app.use(express.json());
@@ -12,7 +13,7 @@ HomePageRoute.route("/").get(send_companyRegisterPage);
 
 
 function send_companyRegisterPage(req,res){
-    res.sendFile("C:/Users/Kartik/Desktop/TechPioneers_ParkingManagementSystem/Frontend/homePage.html");
+    res.sendFile(path.join(__dirname,"../Frontend/homePage.html"));
 }
 
 module.exports=HomePageRoute;

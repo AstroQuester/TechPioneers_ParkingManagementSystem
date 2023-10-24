@@ -68,16 +68,19 @@ function send_companyRegisterPage(req,res){
     res.sendFile(path.join(__dirname,"../Frontend/companyRegister.html"));
 }
 
-function register_company_in_database(req,res){
+async function register_company_in_database(req,res){
     //storing data recieved data from frontend form
     let newCompany=req.body;
     // storing in database
-    createCompany(newCompany).then(()=>{
-        console.log("Registration Successfull!");
-    }).catch((err)=>{
+    try{
+        await createCompany(newCompany)
+        console.log("Registeration Successfull!");
+        res.status(200).json({message:"Success"});
+    }catch(err){
         console.log(err);
         console.log("Registeration Failed!");
-    });
+        res.status(500).json({message:"Failure"});
+    }
 }
 
 async function createCompany(companyDetails){

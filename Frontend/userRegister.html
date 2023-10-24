@@ -78,9 +78,18 @@
     let data_to_be_sent={FirstName,LastName,Email,Password,Gender,PhoneNumber,AadharCardNumber,VehicleNumber,Address};
     
     //sending data to backend by axios library
+    try{
+      let response=await axios.post("/register/user",data_to_be_sent);
+      if(response.status==200){
+        alert("Registeration Successfull!");
+        window.location.href="/homePage";
+      }
+    }
+    catch(error){
+      console.log(error);
+      alert("Registeration Failed!\n\nPlease Enter a Unique Email ID and Fill the Credentials Properly!");
+    }
 
-    await axios.post("/register/user",data_to_be_sent);
-  
   });
 </script>
 </html>
