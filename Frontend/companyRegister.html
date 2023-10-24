@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Registeration Page</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+    crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div class="alert alert-success">
+    <div class="col">
+      <div>
+        <div class="card-body text-dark">
+          <br>
+          <h1 class="card-title text-dark text-center">Welcome to Registeration Page</h1>
+          <br>
+          <h5 class="form-label">Company Name: </h5>
+          <input id="CompanyName" type="text" class="form-control">
+          <br>
+          <h5 class="form-label">Email:</h5>
+          <input id="Email" type="text" class="form-control" value="">
+          <br>
+          <h5 class="form-label">Password:</h5>
+          <input id="Password" type="password" class="form-control" value="">
+          <br>
+          <h5 class="form-label">Contact Number:</h5>
+          <input id="ContactNumber" type="number" class="form-control" value="">
+          <br>
+          <h5 class="form-label">Location/Address of Parking Space: </h5>
+          <input id="Location" type="text" class="form-control">
+          <br>
+          <h5 class="form-label">Number of Rows in Parking Space: </h5>
+          <input id="RowsCount" type="number" class="form-control">
+          <br>
+          <h5 class="form-label">Number of Columns in Parking Space: </h5>
+          <input id="ColumnCount" type="number" class="form-control">
+          <br>
+          <button id="regBtn" class="btn btn-warning">
+            <h4>Register</h4>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script>
+  let regBtn=document.getElementById("regBtn");
+  regBtn.addEventListener('click',async function(e){
+    e.preventDefault();
+    let CompanyName=document.getElementById("CompanyName").value;
+    let Email=document.getElementById("Email").value;
+    let Password=document.getElementById("Password").value;
+    let ContactNumber=parseInt(document.getElementById("ContactNumber").value);
+    let Location=document.getElementById("Location").value;
+    let RowsCount=parseInt(document.getElementById("RowsCount").value);
+    let ColumnCount=parseInt(document.getElementById("ColumnCount").value);
+    
+    let data_to_be_sent={CompanyName,Email,Password,ContactNumber,Location,RowsCount,ColumnCount};
+    
+    //sending data to backend by axios library
+
+    await axios.post("/register/company",data_to_be_sent);
+    
+  });
+</script>
+</html>
