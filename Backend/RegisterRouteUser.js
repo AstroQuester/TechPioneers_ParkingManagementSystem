@@ -13,10 +13,10 @@ const database_link="mongodb+srv://TechPioneers:KvSavp7ddFYnl5cm@techpioneerspms
 
 mongoose.connect(database_link).then(
     function(){
-        console.log("User DataBase Connected!");
+        console.log("User DataBase Connected");
     }
 ).catch(function(err){
-    console.log("DataBase Connection Failed!!");
+    console.log("User DataBase Connection Failed");
 })
 
 // Schema of User Database
@@ -100,4 +100,4 @@ async function createUser(userDetails){
 
 
 //this line is so the we can use it in app.js
-module.exports=UserRegisterRouter;
+module.exports={UserRegisterRouter,userDataBase};
