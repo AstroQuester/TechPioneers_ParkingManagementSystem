@@ -1,3 +1,5 @@
-user registeration route -> /company/user
-company registeration route -> /company/company
+user registeration route -> /register/user
+company registeration route -> /register/company
 home page -> /homePage 
+user login -> /login/user
+company login -> /login/company

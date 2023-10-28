@@ -13,10 +13,10 @@ const database_link="mongodb+srv://TechPioneers:KvSavp7ddFYnl5cm@techpioneerspms
 
 mongoose.connect(database_link).then(
     function(){
-        console.log("Company DataBase Connected!");
+        console.log("Company DataBase Connected");
     }
 ).catch(function(err){
-    console.log("DataBase Connection Failed!!");
+    console.log("Company DataBase Connection Failed");
 })
 
 // Schema of User Database
@@ -88,4 +88,4 @@ async function createCompany(companyDetails){
     console.log(result);
 }
 //this line is so the we can use it in app.js
-module.exports=CompanyRegisterRouter;
+module.exports={CompanyRegisterRouter,companyDataBase};
