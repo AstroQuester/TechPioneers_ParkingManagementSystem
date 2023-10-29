@@ -45,8 +45,7 @@
         <!-- SearchBar -->
         <div class="container-fluid">
             <form class="d-flex" role="search">
-                <input id="SearchBar" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button type="button" id="SearchBtn" class="btn btn-primary">Search</button>
+                <button id="SearchBtn" class="btn btn-primary">Search Parking Slots Near Me</button>
             </form>
         </div>
         <br>
@@ -55,7 +54,9 @@
         </div>
     </div>
 </body>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script>
+    //Login setup
     let cookieAvailable = decodeURIComponent(document.cookie).split("; ");
     for (cookies of cookieAvailable) {
         let currentCookie = cookies.split("=");
@@ -65,13 +66,47 @@
             break;
         }
     }
+    //logout function
     document.getElementById("LogOut").addEventListener("click", () => {
         // Delete cookies to logout
         document.cookie.split(";").forEach(function (c) { document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/"); });
         // redirect to home page
         window.location.href = "/homePage";
     });
+    // Search button
+    let SearchBtn=document.getElementById("SearchBtn");
+    SearchBtn.addEventListener("click",function(e){
+        e.preventDefault();
+        let companiesData;
+        navigator.geolocation.getCurrentPosition(async function(position){
+            let long=position.coords.longitude;
+            let lati=position.coords.latitude;
+            try{
+                let dataRecievd=await axios.post("/dashboard/user",{longitude:long,latitude:lati});
+                let companiesData=dataRecievd.data;
+                //Adding elements in the search Result div
+                for(company of companiesData){
+                    let data = document.createElement("div");
+                    data.className+="alert alert-secondary";
+                    data.innerHTML=`
+                    <h7>Name: ${company.CompanyName}</h7>
+                    <br>
+                    Address: ${company.Location}
+                    <br>
+                    <button "type="button" class="btn btn-primary" onclick={window.location.href="/booking/${company.Email}"}>Book Parking Slot</button>`;
+                    
+                    document.getElementById("SearchResult").append(data);
+                }
 
+            }
+            catch(err){
+                console.log(err);
+                console.log("Company Data Couldn't be fetched");
+            }
+
+        });
+
+    })
 </script>
 
 </html>

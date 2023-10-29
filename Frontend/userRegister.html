@@ -2,64 +2,185 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Registeration Page</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous" />
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
-    crossorigin="anonymous"></script>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Kar Park-User Signup</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="/img/Kar Park-bg.png" rel="icon">
+  <link href="/img/Kar Park-bg.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="/vendor/aos/aos.css" rel="stylesheet">
+  <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="/css/style.css" rel="stylesheet">
+
 </head>
 
 <body>
-  <div class="alert alert-success">
-    <div class="col">
-      <div>
-        <div class="card-body text-dark">
-          <br>
-          <h1 class="card-title text-dark text-center">Welcome to Registeration Page</h1>
-          <br>
-          <h5 class="form-label">First Name: </h5>
-          <input id="FirstName" type="text" class="form-control">
-          <br>
-          <h5 class="form-label">Last Name:</h5>
-          <input id="LastName" type="text" class="form-control" value="">
-          <br>
-          <h5 class="form-label">Email:</h5>
-          <input id="Email" type="text" class="form-control" value="">
-          <br>
-          <h5 class="form-label">Password:</h5>
-          <input id="Password" type="password" class="form-control" value="">
-          <br>
-          <h5 class="form-label">Gender:</h5>
-          <select id="Gender" class="form-select form-select-sm">
-            <option selected value="">Select one</option>
-            <option value="M">Male</option>
-            <option value="F">Female</option>
-            <option value="O">Other</option>
-          </select>
-          <br>
-          <h5 class="form-label">Phone Number:</h5>
-          <input id="PhoneNumber" type="number" class="form-control" value="">
-          <br>
-          <h5 class="form-label">Aadhar Card Number: </h5>
-          <input id="AadharCardNumber" type="number" class="form-control">
-          <br>
-          <h5 class="form-label">Vehicle Number: </h5>
-          <input id="VehicleNumber" type="text" class="form-control">
-          <br>
-          <h5 class="form-label">Address: </h5>
-          <input id="Address" type="text" class="form-control">
-          <br>
-          <button id="regBtn" class="btn btn-warning">
-            <h4>Register</h4>
-          </button>
-        </div>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top header-inner-pages">
+    <div class="container d-flex align-items-center">
+
+      <h1 class="logo me-auto"><a href="Kar Park.html">Kar Park</a></h1>
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="Kar Park.html">Home</a></li>
+          <li><a class="nav-link scrollto active" href="Kar Park-User Signup.html">Account</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+      <div class="container">
+
+        <ol>
+          <li><a href="/homePage">Kar Park</a></li>
+          <li><a href="/login/user">Login</a></li>
+          <li>User Signup</li>
+        </ol>
+        <h2>User Signup Page</h2>
+
+      </div>
+    </section><!-- End Breadcrumbs -->
+
+    <!-- <section class="about"> -->
+
+      <!-- <div class="container"> -->
+        <section class="h-100" style="background-color:#e8edf5;">
+          <div class="container py-5 h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+              <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                <div class="card shadow-2-strong" style="border-radius: 1rem;">
+                  <div class="card-body p-5 text-center">
+        
+                    <h3 class="mb-5">User Sign Up</h3>
+
+                    <div class="form-outline mb-4">
+                      <input type="text" id="FirstName" class="form-control form-control-lg" />
+                      <label class="form-label" for="first-name">First Name</label>
+                    </div>
+
+                    <div class="form-outline mb-4">
+                      <input type="text" id="LastName" class="form-control form-control-lg" />
+                      <label class="form-label" for="last-name">Last Name</label>
+                    </div>
+        
+                    <div class="form-outline mb-4">
+                      <input type="email" id="Email" class="form-control form-control-lg" />
+                      <label class="form-label" for="user-email">Email</label>
+                    </div>
+        
+                    <div class="form-outline mb-4">
+                      <input type="password" id="Password" class="form-control form-control-lg" />
+                      <label class="form-label" for="user-password">Password</label>
+                    </div>
+
+                    <div class="form-outline mb-4">
+                      <label class="form-label" for="gender">Gender</label>
+                      <select id="Gender" name="gender">
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="others" selected>Others</option>
+                      </select>
+                    </div>
+
+                    <div class="form-outline mb-4">
+                      <input type="number" id="PhoneNumber" class="form-control form-control-lg" />
+                      <label class="form-label" for="user-contact-number">Contact Number</label>
+                    </div>
+
+                    <div class="form-outline mb-4">
+                      <input type="number" id="AadharCardNumber" class="form-control form-control-lg" />
+                      <label class="form-label" for="user-adhar">Adhar Card Number</label>
+                    </div>
+
+                    <div class="form-outline mb-4">
+                      <input type="text" id="VehicleNumber" class="form-control form-control-lg" />
+                      <label class="form-label" for="user-vehical-munber">Vehical Number</label>
+                    </div>
+
+                    <div class="form-outline mb-4">
+                      <input type="text" id="Address" class="form-control form-control-lg" />
+                      <label class="form-label" for="user-address">Address</label>
+                    </div>
+
+                    <!-- Checkbox -->
+        
+                    <hr class="my-4">
+        
+                    <div class="d-grid gap-2">
+                      <button id="regBtn" class="btn btn-primary" type="submit">Signup</button>
+                    </div>
+
+                    <p class="text-center text-muted mt-5 mb-0">Have already an account? <a href="/login/user"
+                      class="fw-bold text-body"><u>Login here</u></a></p>
+
+                    <p class="text-center text-muted mt-5 mb-0">Company signup instead! <a href="/register/company"
+                      class="fw-bold text-body"><u>Signup here</u></a></p>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      <!-- </div> -->
+
+    <!-- </section> -->
+
+  <!-- </main>End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+    <div class="container footer-bottom clearfix">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Tech Pioneers</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        Designed by <a href="#">Akshat Srivastava</a>
       </div>
     </div>
-  </div>
+  </footer><!-- End Footer -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="/vendor/aos/aos.js"></script>
+  <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="/js/main.js"></script>
+
 </body>
+
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script>
   let regBtn=document.getElementById("regBtn");

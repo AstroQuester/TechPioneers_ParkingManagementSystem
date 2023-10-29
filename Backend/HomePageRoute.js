@@ -4,7 +4,7 @@ const app=express();
 // app.listen(3000);
 app.use(express.json());
 
-
+app.use(express.static(path.join(__dirname,"../public")));
 const HomePageRoute=express.Router();
 
 app.use("/homePage",HomePageRoute);
