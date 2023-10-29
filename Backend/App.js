@@ -5,6 +5,7 @@ const app=express();
 app.listen(3000);
 app.use(express.json());
 app.use(cookieParser());
+app.use(express.static(path.join(__dirname,"../public")));
 
 const {UserRegisterRouter}=require("./RegisterRouteUser");
 const {CompanyRegisterRouter}=require("./RegisterRouteCompany");
@@ -14,6 +15,7 @@ const CompanyLoginRoute=require("./CompanyLoginRoute");
 const LoggedInChecker=require("./LoggedInChecker");
 const UserDashboard=require("./UserDashboard");
 
+app.use(express.static(path.join(__dirname,"../public")));
 app.get("/",(req,res)=>{res.redirect("/homePage");})
 app.use("/homePage",LoggedInChecker,HomePageRoute)
 app.use("/register/user",LoggedInChecker,UserRegisterRouter);
