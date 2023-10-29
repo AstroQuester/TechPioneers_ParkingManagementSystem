@@ -2,41 +2,146 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kar Park</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js"
-        integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa"
-        crossorigin="anonymous"></script>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Kar Park-Login</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/Kar Park-bg.png" rel="icon">
+  <link href="assets/img/Kar Park-bg.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
 </head>
 
-<body class="alert alert-primary">
-    <div id="login">
-        <div class="row">
-            <div class="col">
-                <div class="card text-bg-info">
-                    <div class="card-body">
-                        <h3 class="card-title text-dark text-center">User Login</h3>
-                        <br>
-                        <label class="form-label">Email:</label>
-                        <input id="Email" type="text" class="form-control" value="">
-                        <br>
-                        <label class="form-label">Password:</label>
-                        <input id="Password" type="password" class="form-control" value="">
-                        <br>
-                        <a id="UserLogin" class="btn btn-warning">Log In</a>
-                    </div>
-                </div>
-            </div>
-            <div>
-            </div>
-</body>
+<body>
 
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top header-inner-pages">
+    <div class="container d-flex align-items-center">
+
+      <h1 class="logo me-auto"><a href="Kar Park.html">Kar Park</a></h1>
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="Kar Park.html">Home</a></li>
+          <li><a class="nav-link scrollto active" href="Kar Park-Login.html">Account</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+      <div class="container">
+
+        <ol>
+          <li><a href="Kar Park.html">Kar Park</a></li>
+          <li>Login</li>
+        </ol>
+        <h2>Login Page</h2>
+
+      </div>
+    </section><!-- End Breadcrumbs -->
+
+    <!-- <section class="about"> -->
+
+      <!-- <div class="container"> -->
+        <section class="h-100" style="background-color:#e8edf5;">
+          <div class="container py-5 h-auto">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+              <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                <div class="card shadow-2-strong" style="border-radius: 1rem;">
+                  <div class="card-body p-5 text-center">
+        
+                    <h3 class="mb-5">Sign In</h3>
+        
+                    <div class="form-outline mb-4">
+                      <input type="email" id="Email" class="form-control form-control-lg" />
+                      <label class="form-label" for="input-email">Email</label>
+                    </div>
+        
+                    <div class="form-outline mb-4">
+                      <input type="password" id="Password" class="form-control form-control-lg" />
+                      <label class="form-label" for="input-password">Password</label>
+                    </div>
+        
+                    <!-- Checkbox -->
+        
+                    <div class="d-grid gap-2">
+                      <button id="UserLogin" lass="btn btn-primary" type="submit">Login</button>
+                    </div>
+        
+                    <hr class="my-4">
+        
+                    <div class="d-grid gap-2">
+                      <button class="btn btn-danger" style="background-color: #dd4b39;"
+                      type="submit"><i class="bi bi-google"></i> Sign in with google</button>
+                    </div>
+
+                    <p class="text-center text-muted mt-5 mb-0">Do not have an account yet? <a href="/register/user"
+                      class="fw-bold text-body"><u>Signup here</u></a></p>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      <!-- </div> -->
+
+    <!-- </section> -->
+
+  <!-- </main>End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+    <div class="container footer-bottom clearfix">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Tech Pioneers</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        Designed by <a href="https://www.linkedin.com/in/yuvraj-singh-ba5251233/">Yuvraj Singh</a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script>
     let UserLogin = document.getElementById("UserLogin");
@@ -59,5 +164,4 @@
         }
     });
 </script>
-
 </html>
